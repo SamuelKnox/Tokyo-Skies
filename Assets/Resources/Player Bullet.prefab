@@ -83,6 +83,7 @@ MonoBehaviour:
   Damage: 1
   Tags:
   - Enemy
+  - EnemyMissile
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

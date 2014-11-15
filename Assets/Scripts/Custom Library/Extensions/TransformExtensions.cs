@@ -5,11 +5,37 @@ using System;
 public static class TransformExtensions
 {
     /// <summary>
+    /// Rotates the transform to a specified rotation over a set number of seconds.
+    /// For an infinite rotation, multiply the degrees by a float to adjust the speed, and set the duration to 0 seconds.
+    /// Calling RotateOverTime() or RotateTowardsOverTime() will cancel any pending rotations on this transform.
+    /// </summary>
+    public static void RotateTowardsOverTime(this Transform transform, Vector3 degrees, float seconds)
+    {
+        Vector3 rotationToBeMade = degrees - transform.rotation.eulerAngles;
+        if (degrees.z > 270.0F && transform.rotation.eulerAngles.z < 90.0F)
+        {
+            rotationToBeMade.z = -(360.0F - degrees.z + transform.rotation.eulerAngles.z);
+        }
+        if (transform.rotation.eulerAngles.z > 270.0F && degrees.z < 90.0F)
+        {
+            rotationToBeMade.z = 360.0F - transform.rotation.eulerAngles.z + degrees.z;
+        }
+        RotateOverTime(transform, rotationToBeMade, seconds);
+    }
+
+    /// <summary>
     /// Rotates the transform by a specified number of degrees over a set number of seconds.
     /// For an infinite rotation, multiply the degrees by a float to adjust the speed, and set the duration to 0 seconds.
+    /// Calling RotateOverTime() or RotateTowardsOverTime() will cancel any pending rotations on this transform.
     /// </summary>
     public static void RotateOverTime(this Transform transform, Vector3 degrees, float seconds)
     {
+        RotateOverTime[] oldRotateOverTimeComponents = transform.gameObject.GetComponents<RotateOverTime>();
+        foreach (RotateOverTime oldRotateOverTimeComponent in oldRotateOverTimeComponents)
+        {
+            GameObject.Destroy(oldRotateOverTimeComponent);
+        }
+
         RotateOverTime rotateOverTimeComponent = transform.gameObject.AddComponent<RotateOverTime>();
         rotateOverTimeComponent.hideFlags = HideFlags.HideInInspector;
         rotateOverTimeComponent.Degrees = degrees;

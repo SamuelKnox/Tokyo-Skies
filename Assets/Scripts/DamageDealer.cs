@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Collider2D))]
 public class DamageDealer : MonoBehaviour
 {
     [Tooltip("Amount of damage dealt by this object")]

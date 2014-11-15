@@ -886,9 +886,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bebfe235d39eff644a4f52c543191fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHitPoints: 10
+  CurrentHitPoints: 25
   MinimumHitPoints: 0
-  MaximumHitPoints: 10
+  MaximumHitPoints: 25
   CurrentWeapon: 1
   MinimumWeapon: 1
   MaximumWeapon: 10
@@ -1066,13 +1066,13 @@ MonoBehaviour:
   MaximumHitPoints: 10
   CurrentWeapon: 1
   MinimumWeapon: 1
-  MaximumWeapon: 10
+  MaximumWeapon: 3
   CurrentShield: 1
   MinimumShield: 1
-  MaximumShield: 10
+  MaximumShield: 3
   CurrentSpeed: 1
   MinimumSpeed: 1
-  MaximumSpeed: 10
+  MaximumSpeed: 5
 --- !u!114 &11400050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1141,13 +1141,13 @@ MonoBehaviour:
   MaximumHitPoints: 10
   CurrentWeapon: 1
   MinimumWeapon: 1
-  MaximumWeapon: 10
+  MaximumWeapon: 3
   CurrentShield: 1
   MinimumShield: 1
-  MaximumShield: 10
+  MaximumShield: 5
   CurrentSpeed: 1
   MinimumSpeed: 1
-  MaximumSpeed: 10
+  MaximumSpeed: 3
 --- !u!114 &11400060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1316,13 +1316,13 @@ MonoBehaviour:
   MaximumHitPoints: 10
   CurrentWeapon: 1
   MinimumWeapon: 1
-  MaximumWeapon: 10
+  MaximumWeapon: 5
   CurrentShield: 1
   MinimumShield: 1
-  MaximumShield: 10
+  MaximumShield: 3
   CurrentSpeed: 1
   MinimumSpeed: 1
-  MaximumSpeed: 10
+  MaximumSpeed: 3
 --- !u!114 &11400082
 MonoBehaviour:
   m_ObjectHideFlags: 1
